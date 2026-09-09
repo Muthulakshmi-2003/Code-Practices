@@ -1,0 +1,43 @@
+-- CREATE
+create table customerdata(customer_id varchar(50) Primary Key,
+       first_name varchar(50) Unique,
+       last_name varchar(50),
+       country varchar(40),
+       age Int check(age>=0 AND age<=99),
+       phone Int (10)
+       );
+
+--  SELECT
+select * from customersdata;
+
+-- INSERT
+Insert into customersdata (customer_id , first_name , last_name , country , age , phone) Value ('CUS-101','Muthu','Lakshmi','USA',20,987654321);
+Insert into customersdata (customer_id , first_name , last_name , country , age , phone) Value ('CUS-102','kamali','s','UK',23,'7994928199');
+Insert into customersdata (customer_id , first_name , last_name , country , age , phone) Value ('CUS-103','Anusha','KAM','London',26,'70994967199');
+
+-- ALTER TABLE
+alter table customersdata modify column phone varchar(11);
+
+-- RENAME
+
+Rename table customerdata to customersdata;
+
+-- From
+
+select first_name , age from customersdata;
+
+select first_name from (select first_name , age from customersdata where age > 21) as adulat_person;
+
+select * from customersdata where age between 24 and 27;
+
+select customer_id , first_name, age  from customersdata where age between 24 and 27;
+
+select * from customersdata where first_name like 'm%';
+
+select first_name , last_name , age  from customersdata where age in (22,26);
+
+-- Update
+
+update customersdata set age= age+2 where first_name = 'Muthu';
+
+
