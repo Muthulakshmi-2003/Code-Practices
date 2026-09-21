@@ -1,0 +1,8 @@
+#Left Join
+select a.firstName , a.lastName , b.city , b.state from Person a Left join Address b on a.personId = b.personId;
+
+#self join
+select e.name as Employee from Employee m Join Employee e on m.id = e.managerId where m.salary < e.salary;
+
+#Finding a duplicate email
+select email from Person Group By email Having Count(*) > 1;
